@@ -48,7 +48,7 @@ void loop()
   int hour = ((int) (ms / MS_PER_HOUR))     % HOURS_PER_DAY;
   int min  = ((int) (ms / MS_PER_MIN))      % MINS_PER_HOUR;
   int sec  = ((int) (ms / MS_PER_SEC))      % SECS_PER_MIN;
-  int deci = ((int) (ms / MS_PER_DECI_SEC)) % DECIS_PER_SEC;
+  //int deci = ((int) (ms / MS_PER_DECI_SEC)) % DECIS_PER_SEC;
 
   bool am = hour < 12;
   if (!am) hour -= 12;
@@ -61,13 +61,13 @@ void loop()
   byte sec1   = sec % 10;
 
   // Rightmost column is deci-seconds.  Output data for the column, then column #
-  sendData(deci,   COL8);
-  sendData(sec1,   COL7);
-  sendData(sec10,  COL6);
-  sendData(min1,   COL5);
-  sendData(min10,  COL4);
-  sendData(hour1,  COL3);
-  sendData(hour10, COL2);
+  //sendData(deci,   COL8);
+  sendData(sec1,   COL8);
+  sendData(sec10,  COL7);
+  sendData(min1,   COL6);
+  sendData(min10,  COL5);
+  sendData(hour1,  COL4);
+  sendData(hour10, COL3);
   sendData(am,     COL1);
 
   // Delay a short period
