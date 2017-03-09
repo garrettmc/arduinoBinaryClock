@@ -67,16 +67,6 @@ void loop()
   shiftOut(dataPin, clockPin, MSBFIRST, COL4);
   sendData();
 
-
-
-  for (int row=0;  row < 8;  row++) {
-
-
-    shiftOut(dataPin, clockPin, MSBFIRST, data); // Row data (all rows)
-    shiftOut(dataPin, clockPin, MSBFIRST, 0x01 << row); // Column data
-    delay(1);
-  }
-
   delay(10);
 }
 
